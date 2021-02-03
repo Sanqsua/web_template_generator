@@ -3,16 +3,21 @@ use std::env;
 
 fn main() -> Result<(), std::io::Error> {
     //get the first input for the name of the file
+
     let input = env::args().nth(1).expect("pease enter a name for html");
 
-    let re = Regex::new(r"^[a-zA-Z1-9_-]+$").unwrap();
+    assert!(
+        input.len() < 15,
+        "the name of the file should not be bigger than 15 characters"
+    );
+    let re = Regex::new(r"^[a-zA-Z0-9_-]+$").unwrap();
     assert!(
         re.is_match(input.as_str()),
         "please insert a proper name without special characters and stuff"
     );
 
     let html_file_name = format!("{}{}", input, ".html");
-    
+
     // simple protection dublication protection
     if let Ok(entries) = std::fs::read_dir(".") {
         for entry in entries {
@@ -24,7 +29,7 @@ fn main() -> Result<(), std::io::Error> {
             }
         }
     }
-    
+
     // finally create and write the content into the file
     std::fs::write(html_file_name, content())?;
     Ok(())
