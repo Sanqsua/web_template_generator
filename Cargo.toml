@@ -1,5 +1,5 @@
 [package]
-name = "html_generator"
+name = "web_template_generator"
 version = "0.1.0"
 authors = ["sangsua <quang1994@web.de>"]
 edition = "2018"

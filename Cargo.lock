@@ -10,13 +10,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "html_generator"
-version = "0.1.0"
-dependencies = [
- "regex",
-]
-
-[[package]]
 name = "memchr"
 version = "2.3.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -53,4 +46,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d8208a331e1cb318dd5bd76951d2b8fc48ca38a69f5f4e4af1b6a9f8c6236915"
 dependencies = [
  "once_cell",
+]
+
+[[package]]
+name = "web_template_generator"
+version = "0.1.0"
+dependencies = [
+ "regex",
 ]
