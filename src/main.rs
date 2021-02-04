@@ -62,7 +62,7 @@ pub fn html_default_content() -> String {
 </html>";
     content.to_string()
 }
-
+//css template
 pub fn css_default_content()->String{
     "*{ margin: 0; padding: 0; box-sizing: border-box; }".to_string()
 }
